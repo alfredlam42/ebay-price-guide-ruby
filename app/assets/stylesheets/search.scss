@@ -2,6 +2,7 @@
 // They will automatically be included in application.css.
 // You can use Sass (SCSS) here: http://sass-lang.com/
 
+/* css for the search form */
 #search {
   margin-top: 1%;
   display: -webkit-flex;
@@ -54,6 +55,8 @@ form {
   flex: 1;
 }
 
+/* css for the handlebars template */
+
 #results {
   height: 100vh;
 }
@@ -91,6 +94,10 @@ form {
 
 #item-name{
   font-size: 3vh;
+}
+
+#track-item form button {
+  width: 50%;
 }
 
 #table {

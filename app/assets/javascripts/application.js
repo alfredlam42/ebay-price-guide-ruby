@@ -19,7 +19,7 @@
 //= require_tree .
 
 $(document).ready(function(){
-  $('form').on('submit', function(event){
+  $('#search form').on('submit', function(event){
     event.preventDefault();
 
     var searchResult = {};
@@ -34,8 +34,6 @@ $(document).ready(function(){
       status = 'On Sale';
     };
 
-    console.log('before ajax');
-
     $.ajax({
       method: 'POST',
       data: data,
@@ -44,10 +42,6 @@ $(document).ready(function(){
     })
 
     .done(function(response){
-      console.log('ajax call sucessful');
-      console.log('waiting for prepend results');
-      console.log('response:');
-      console.log(response);
       //the property of the first object is different depending in the completed box is checked
       var items = response[Object.keys(response)[0]].searchResult.item;
       var imageURL = items[0].galleryURL;

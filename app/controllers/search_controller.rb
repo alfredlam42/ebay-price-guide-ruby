@@ -3,8 +3,6 @@ class SearchController < ApplicationController
   end
 
   def create()
-    p 'in post route'
-
     filterCount = 1
 
     item = params[:item].split(' ').join('+')
@@ -39,11 +37,8 @@ class SearchController < ApplicationController
     path += params[:completed] ? "&sortOrder=StartTimeNewest" : "&sortOrder=PricePlusShippingLowest"
     path += '&paginationInput.entriesPerPage=50'
 
-    p 'path complete'
-
     response = HTTParty.get(path)
 
-    p 'response complete'
     render plain: response.to_json
   end
 end
