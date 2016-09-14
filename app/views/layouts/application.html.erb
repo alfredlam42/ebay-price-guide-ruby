@@ -1,0 +1,31 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <title>EbayPriceGuideRails</title>
+    <%= csrf_meta_tags %>
+
+    <%= stylesheet_link_tag    'application', media: 'all', 'data-turbolinks-track': 'reload' %>
+    <%= javascript_include_tag 'application', 'data-turbolinks-track': 'reload' %>
+
+    <%= javascript_include_tag 'https://cdnjs.cloudflare.com/ajax/libs/handlebars.js/4.0.5/handlebars.js' %>
+    <%= javascript_include_tag 'https://code.highcharts.com/highcharts.js' %>
+    <%= javascript_include_tag 'https://code.highcharts.com/highcharts-more.js' %>
+    <%= javascript_include_tag 'https://code.highcharts.com/modules/exporting.js' %>
+
+  </head>
+
+  <body>
+    <div id='navbar'>
+      <% if user_signed_in? %>
+        <%= link_to 'Edit profile', edit_user_registration_path, :class => 'navbar-link' %> |
+        <%= link_to "Logout", destroy_user_session_path, method: :delete, :class => 'navbar-link'  %>
+      <% else %>
+        <%= link_to "Sign up", new_user_registration_path, :class => 'navbar-link'%> ||
+        <%= link_to "Login", new_user_session_path, :class => 'navbar-link'  %>
+      <% end %>
+    </div>
+    <p class="notice"><%= notice %></p>
+    <p class="alert"><%= alert %></p>
+    <%= yield %>
+  </body>
+</html>

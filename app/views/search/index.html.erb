@@ -1,0 +1,33 @@
+<div id='search'>
+  <%= form_for :search do |f| %>
+    <div id='form-line-1'>
+      <!-- 'name', 'value', placeholder: 'asdf' -->
+      <%= text_field_tag :item, nil, placeholder: 'Search...' %>
+      <%= text_field_tag :retailPrice, nil, placeholder: 'Retail Price' %>
+    </div>
+
+    <div id='form-line-2'>
+      <div id='listing-type'>
+        <%= radio_button_tag(:auctionType, 'All') %>
+        <%= label_tag(:auctionType_All, 'All') %>
+
+        <%= radio_button_tag(:auctionType, 'Auction') %>
+        <%= label_tag(:auctionType_Auction, 'Auction') %>
+
+        <%= radio_button_tag(:auctionType, 'FixedPrice') %>
+        <%= label_tag(:auctionType_FixedPrice, 'Buy It Now') %>
+      </div>
+
+      <div id='complete-listing'>
+        <%= check_box_tag(:completed, 'true') %>
+        <%= label_tag(:completed, 'Completed') %>
+      </div>
+    </div>
+
+    <div id='form-line-3'>
+      <%= button_tag 'Search', id: 'submit' %>
+    </div>
+  <% end %>
+</div>
+
+<div id='results'></div>

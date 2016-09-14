@@ -1,0 +1,10 @@
+class CreateSearches < ActiveRecord::Migration[5.0]
+  def change
+    create_table :searches do |t|
+      t.json :result
+      t.integer :user_id
+
+      t.timestamps
+    end
+  end
+end

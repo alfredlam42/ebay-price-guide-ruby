@@ -1,0 +1,62 @@
+  <!-- var exampleOneData = {name: 'SDCC Hasbro Maximus', status: 'Sold', image: 'http://thumbs.ebaystatic.com/images/g/M9QAAOSwENxXmmqL/s-l225.jpg', low: 200.00, average: 279.00, high: 300}; -->
+
+<div id='item-row'>
+  <div id='item-image'><img src={{image}}></div>
+  <div id='information'>
+    <div id='item-name'>{{name}}</div>
+    <div id='item-status'>Status: {{status}}</div>
+    <div id='table'>
+      <table>
+        <tr>
+          <th></th>
+          <th>Selling Price</th>
+          <th>Profit</th>
+          <th>Profit Margin</th>
+        </tr>
+
+        <tr>
+          <td>Average</td>
+          <td class='cell'>${{average}}</td>
+          <td class='cell'>${{averageProfit}}</td>
+          <td class='cell'>{{averageProfitPercent}}%</td>
+        </tr>
+
+        <tr>
+          <td>Lowest</td>
+          <td class='cell'>${{low}}</td>
+          <td class='cell'>${{lowProfit}}</td>
+          <td class='cell'>{{lowProfitPercent}}%</td>
+        </tr>
+
+        <tr>
+          <td>Lower Quartile</td>
+          <td class='cell'>${{lowerQuartile}}</td>
+          <td class='cell'>${{lowerQuartileProfit}}</td>
+          <td class='cell'>{{lowerQuartileProfitPercent}}%</td>
+        </tr>
+
+        <tr>
+          <td>Median</td>
+          <td class='cell'>${{median}}</td>
+          <td class='cell'>${{medianProfit}}</td>
+          <td class='cell'>{{medianProfitPercent}}%</td>
+        </tr>
+
+        <tr>
+          <td>Upper Quartile</td>
+          <td class='cell'>${{upperQuartile}}</td>
+          <td class='cell'>${{upperQuartileProfit}}</td>
+          <td class='cell'>{{upperQuartileProfitPercent}}%</td>
+        </tr>
+
+        <tr>
+          <td>Highest</td>
+          <td class='cell'>${{high}}</td>
+          <td class='cell'>${{highProfit}}</td>
+          <td class='cell'>{{highProfitPercent}}%</td>
+        </tr>
+      </table>
+    </div>
+  </div>
+  <div id='chart'></div>
+</div>
