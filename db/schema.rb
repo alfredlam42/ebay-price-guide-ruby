@@ -17,10 +17,12 @@ ActiveRecord::Schema.define(version: 20160922021312) do
 
   create_table "results", force: :cascade do |t|
     t.json     "result"
-    t.string   "searchParams"
+    t.string   "search_params"
     t.integer  "user_id"
-    t.datetime "created_at",   null: false
-    t.datetime "updated_at",   null: false
+    t.integer  "parent_result_id"
+    t.integer  "child_result_id"
+    t.datetime "created_at",       null: false
+    t.datetime "updated_at",       null: false
   end
 
   create_table "users", force: :cascade do |t|

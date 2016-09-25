@@ -5,7 +5,8 @@ class ResultController < ApplicationController
   end
 
   def create()
-    result = Result.create(result: params[:result].to_json, searchParams: params[:searchParams], user_id: current_user.id);
+    result = Result.create(result: params[:result].to_json, search_params: params[:searchParams], user_id: current_user.id);
+    p result
     render plain: 'done'
   end
 end
